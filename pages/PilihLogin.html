@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/pilihlogin.css">
+	<title>Bantu.in</title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+</head>
+<body>
+	<center>
+		<form class="pilihlogin center">
+			<table>
+				<tr>
+					<td><center><img class="logo" src="../img/index.png"></center></td>
+				</tr>
+				<tr>
+					<td><center><h1>Login Sebagai : </h1></center></td>
+				</tr>
+				<tr>
+					<td><button type="button" class="btn" id="btn1">Customer</button></td>
+				</tr>
+				<tr>
+					<td><button type="button" class="btn" id="btn2">Asisten</button></td>
+				</tr>
+			</table>
+		</form>
+
+		<div class="login center">
+		<form>
+			<center><h1>Login</h1></center>
+				<table>
+					<tr>
+						<td><input type="text" class="inp" placeholder="Username"></td>
+					</tr>
+					<tr>
+						<td><input type="password" required="required" class="inp" placeholder="password"></td>
+					</tr>
+					<tr>
+						<td><button type="submit" class ="btn">Masuk</button></td>
+					</tr>
+				</table>
+		</form>
+				<tr>
+					<td><button type="submit" class ="btn" id="btn_login">Buat Akun</button></td>
+				</tr>
+	</div>
+	<div class="daftarAkun center">
+		<form>
+			<center><h1>Daftar Akun</h1></center>
+				<table>
+					<tr>
+						<td>Nama Depan</td>
+						<td>:</td>
+						<td><input type="text" name="nama_dpn" placeholder="Nama Depan"></td>
+						<td>Nama Belakang</td>
+						<td>:</td>
+						<td><input type="text" name="nama_blk" placeholder="Nama Belakang"></td>
+					</tr>
+				</table>
+		</form>
+	</div>
+	</center>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(function(){
+		$('#btn1').click(function(event){
+			$('.pilihlogin').hide();
+			$('.login').show();
+		});
+		$('#btn2').click(function(event){
+			$('.login').hide();
+		});
+		$('#btn_login').click(function(event){
+			$('.login').hide();
+			$('.daftarAkun').show();
+		});
+	});
+</script>
