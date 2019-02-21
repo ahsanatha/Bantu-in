@@ -1,11 +1,8 @@
 {
-    "title": "Landing Page",
-    "name": "startbootstrap-landing-page",
-    "version": "5.0.3",
-    "scripts": {
-        "start": "gulp watch"
-    },
-    "description": "An HTML landing page template built with Bootstrap",
+    "title": "Shop Homepage",
+    "name": "startbootstrap-shop-homepage",
+    "version": "4.1.2",
+    "description": "A shop homepage HTML template built with Bootstrap",
     "keywords": [
         "css",
         "sass",
@@ -14,9 +11,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/landing-page",
+    "homepage": "https://startbootstrap.com/template-overviews/shop-homepage",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-landing-page/issues",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-shop-homepage/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -26,25 +23,14 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-landing-page.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-shop-homepage.git"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "5.7.2",
-        "bootstrap": "4.3.1",
-        "jquery": "3.3.1",
-        "simple-line-icons": "^2.4.1"
+        "bootstrap": "4.2.1",
+        "jquery": "3.3.1"
     },
     "devDependencies": {
         "browser-sync": "2.26.3",
-        "del": "^3.0.0",
-        "gulp": "4.0.0",
-        "gulp-autoprefixer": "6.0.0",
-        "gulp-clean-css": "4.0.0",
-        "gulp-header": "2.0.7",
-        "gulp-plumber": "^1.2.1",
-        "gulp-rename": "1.4.0",
-        "gulp-sass": "4.0.2",
-        "gulp-uglify": "3.0.1",
-        "merge-stream": "^1.0.1"
+        "gulp": "4.0.0"
     }
 }
