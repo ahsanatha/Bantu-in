@@ -4,61 +4,177 @@
 	<link rel="stylesheet" type="text/css" href="../css/pilihlogin.css">
 	<title>Bantu.in</title>
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<center>
-		<form class="pilihlogin center">
-			<table>
-				<tr>
-					<td><center><img class="logo" src="../img/index.png"></center></td>
-				</tr>
-				<tr>
-					<td><center><h1>Login Sebagai : </h1></center></td>
-				</tr>
-				<tr>
-					<td><button type="button" class="btn" id="btn1">Customer</button></td>
-				</tr>
-				<tr>
-					<td><button type="button" class="btn" id="btn2">Asisten</button></td>
-				</tr>
-			</table>
-		</form>
-
-		<div class="login center">
-		<form>
-			<center><h1>Login</h1></center>
-				<table>
-					<tr>
-						<td><input type="text" class="inp" placeholder="Username"></td>
-					</tr>
-					<tr>
-						<td><input type="password" required="required" class="inp" placeholder="password"></td>
-					</tr>
-					<tr>
-						<td><button type="submit" class ="btn">Masuk</button></td>
-					</tr>
-				</table>
-		</form>
-				<tr>
-					<td><button type="submit" class ="btn" id="btn_login">Buat Akun</button></td>
-				</tr>
-	</div>
-	<div class="daftarAkun center">
-		<form>
-			<center><h1>Daftar Akun</h1></center>
-				<table>
-					<tr>
-						<td>Nama Depan</td>
-						<td>:</td>
-						<td><input type="text" name="nama_dpn" placeholder="Nama Depan"></td>
-						<td>Nama Belakang</td>
-						<td>:</td>
-						<td><input type="text" name="nama_blk" placeholder="Nama Belakang"></td>
-					</tr>
-				</table>
-		</form>
-	</div>
-	</center>
+<!-- ini menu pilihlogin -->
+	<div class="pilihlogin col-md-6 mt-5">	
+		<div class="card" style="width: 500px; margin: auto">
+			<!-- <header class="card-header">
+				<h4 class="card-title mt-2">Masuk Sebagai</h4>
+			</header> -->
+			<img src="../img/index.png" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+			<article class="card-body">
+				<form>
+					<div class="form-group">
+						<button type="button" class="btn btn-primary btn-block " id="btn1" > Pelanggan </button>
+					</div> <!-- form-group// --> 
+					<div class="form-group">
+							<button type="button" class="btn btn-primary btn-block" id="btn2"> Asisten </button>
+					</div> <!-- form-group// -->                                
+				</form>
+			</article>
+		</div>
+	</div> 
+<!-- ini info akun custumer -->
+	<div class=" login col-md-6">		
+		<div class="card" style="width: 500px; margin: auto">
+			<header class="card-header">
+				<a href="" class="float-right btn btn-outline-primary mt-1" id="btn_cst">Log in</a>
+				<h4 class="card-title mt-2">Buat Akun Baru</h4>
+			</header>
+			<article class="card-body">
+				<form>
+					<div class="form-row">
+						<div class="col form-group">
+							<label>Nama Depan</label>
+							<input type="text" class="form-control" placeholder="">
+						</div> <!-- form-group end.// -->
+						<div class="col form-group">
+							<label>Nama Belakang</label>
+							<input type="text" class="form-control" placeholder="">
+						</div> <!-- form-group end.// -->
+					</div> <!-- form-row end.// -->
+					<div class="form-group">
+						<label>Alamat Email</label>
+							<input type="email" class="form-control" placeholder="">
+							<small class="form-text text-muted">Kami tidak akan membagikan alamat email kepada siapapun.</small>
+						</div> <!-- form-group end.// -->
+						<div class="form-group ">
+							<label>Nomor Telepon</label>
+							<input class="form-control" placeholder="" type="text">
+						</div> <!-- form-group// -->
+						<div class="form-row">
+							<div class="col form-group ">
+								<label>Tanggal</label>
+								<select id="Pilih" class="form-control">
+									<option selected="">Pilih...</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+								</div> <!-- form-group end.// -->
+								<div class="col form-group">
+									<label>Bulan</label>
+									<select id="Pilih" class="form-control">
+										<option selected="">Pilih...</option>
+										<option>Januari</option>
+										<option>Februari</option>
+										<option>Maret</option>
+										<option>April</option>
+										<option>Mei</option>
+									</select>
+								</div> <!-- form-group end.// -->
+								<div class="col form-group">
+									<label>Tahun</label>
+									<select id="Pilih" class="form-control">
+										<option selected="">Pilih...</option>
+										<option>1999</option>
+										<option>2000</option>
+										<option>2001</option>
+										<option>2002</option>
+									</select>
+								</div> <!-- form-group end.// -->
+							</div> <!-- form-row.// -->
+						<div class="form-group">
+							<label>Kata Sandi</label>
+							<input class="form-control" placeholder="" type="password">
+						</div> <!-- form-group// -->
+						<div class="form-group">
+							<label>Masukan Ulang Kata Sandi</label>
+							<input class="form-control" placeholder="" type="password">				
+						</div> <!-- form-group// -->     
+						<div class="form-group">
+							<label >Jenis Kelamin :</label>
+							<label class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" value="option1">
+							<span class="form-check-label"> Pria </span>
+							</label>
+							<label class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" name="gender" value="option2">
+							<span class="form-check-label"> Wanita</span>
+							</label>
+						</div> <!-- form-group end.// -->
+						<div class="form-row">
+							<div class="col form-group ">
+								<label>Provinsi</label>
+								<select id="Pilih" class="form-control">
+									<option selected="">Pilih...</option>
+									<option>Aceh</option>
+									<option>Sumatera Utara</option>
+									<option>Sumatera Barat</option>
+									<option>Riau</option>
+									<option>Kepulauan Riau</option>
+									<option>Jambi</option>
+									<option>Bengkulu</option>
+									<option>Sumatera</option>
+									<option>Jawa Barat</option>
+									<option>DKI Jakarta</option>
+								</select>
+							</div> <!-- form-group end.// -->
+							<div class="col form-group">
+								<label>Kota</label>
+								<select id="Pilih" class="form-control">
+									<option selected="">Pilih...</option>
+									<option>Majalengka</option>
+									<option>Bandung</option>
+									<option>Karawang</option>
+									<option>Jakarta</option>
+								</select>
+							</div> <!-- form-group end.// -->
+						</div> <!-- form-row.// -->
+					<div class="form-group">
+						<label>Alamat</label>
+						<textarea class="form-control" id="textarea" rows="3" width=50%></textarea>
+					</div> <!-- form-group end.// -->
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block"> Daftar  </button>
+					</div> <!-- form-group// -->      
+					<small class="text-muted">Dengan Mengklik tombol daftar Anda mengkonfirmasi bahwa anda menerima ketentuan penggunaan dan kebijakan privasi kami.</small>                                          
+				</form>
+			</article> <!-- card-body end .// -->
+		</div> <!-- card.// -->
+	 </div>	
+ <!-- ini login customer -->
+	<!-- <div class="signin_cst col-md-3">
+			<article class="card-body">
+				<h4>Please Sign in </h4>
+				<form>
+				<div class="form-group">
+				<div class="input-group input-icon">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+					</div>
+					<input name="" class="form-control" placeholder="Email" type="email">
+				</div> <!-- input-group.// -->
+				<!-- </div> <!-- form-group// -->
+				<!-- <div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+					<input class="form-control" placeholder="Kata Sandi" type="password">
+				</div> <!-- input-group.// -->
+				<!-- </div> <!-- form-group// -->
+				<!-- <div class="form-group">
+				<button type="submit" class="btn btn-primary btn-block"> Masuk  </button>
+				</div> <!-- form-group// -->
+				<!-- </form>
+			</article>
+			</div> <!-- card.// -->
+		<!-- </div> --> 
 </body>
 </html>
 
@@ -70,10 +186,6 @@
 		});
 		$('#btn2').click(function(event){
 			$('.login').hide();
-		});
-		$('#btn_login').click(function(event){
-			$('.login').hide();
-			$('.daftarAkun').show();
 		});
 	});
 </script>
