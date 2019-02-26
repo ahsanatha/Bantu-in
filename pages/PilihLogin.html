@@ -25,10 +25,10 @@
 		</div>
 
 	 	<!-- ini daftar akun Pelanggan -->
-		<div class=" login_plt col-md-6">		
+		<div class=" login_pln col-md-6">		
 				<div class="card" style="width: 500px; margin: auto">
 					<header class="card-header">
-						<a href="" class="float-right btn btn-outline-primary mt-1" id="btn_pln">Log in</a>
+						<a href="loginpln.html" class="float-right btn btn-outline-primary mt-1" id="btn_pln">Log in</a>
 						<h4 class="card-title mt-2">Buat Akun Baru Asisten</h4>
 					</header>
 					<a href=""></a>
@@ -184,7 +184,7 @@
 		<div class=" login_ast col-md-6">		
 				<div class="card" style="width: 500px; margin: auto">
 					<header class="card-header">
-						<a href="dashboard.html" class="float-right btn btn-outline-primary mt-1" id="btn_ast">Log in</a>
+						<a href="loginast.html" class="float-right btn btn-outline-primary mt-1" id="btn_ast">Log in</a>
 						<h4 class="card-title mt-2">Buat Akun Baru Custumer</h4>
 					</header>
 					<a href=""></a>
@@ -328,6 +328,16 @@
 								<textarea class="form-control" id="textarea" rows="3" width=50%></textarea>
 							</div> <!-- form-group end.// -->
 							<div class="form-group">
+								<label>Deskripsi Diri</label>
+								<!-- <input type="text" class="form-control" placeholder=""> -->
+								<textarea class="form-control" id="textarea" rows="3" width=50%></textarea>
+							</div> <!-- form-group end.// -->
+							<div class="form-group">
+								<label>Pengalaman Kerja : </label>
+								<!-- <input type="text" class="form-control" placeholder=""> -->
+								<textarea class="form-control" id="textarea" rows="3" width=50%></textarea>
+							</div> <!-- form-group end.// --> 
+							<div class="form-group">
 								<button type="submit" class="btn btn-primary btn-block"> Daftar  </button>
 							</div> <!-- form-group// -->      
 							<small class="text-muted">Dengan Mengklik tombol daftar Anda mengkonfirmasi bahwa anda menerima ketentuan penggunaan dan kebijakan privasi kami.</small>                                          
@@ -344,7 +354,7 @@
 	$(function(){
 		$('#btn1').click(function(event){
 			$('.cardLoginWith').hide();
-			$('.login_plt').show();
+			$('.login_pln').show();
 		});
 		$('#btn2').click(function(event){
 			$('.cardLoginWith').hide();
@@ -354,36 +364,3 @@
 
 	});
 </script>
-
-
-
-
-
-	 <!-- ini login customer -->
-	<!-- <div class="signin_cst col-md-3">
-			<article class="card-body">
-				<h4>Please Sign in </h4>
-				<form>
-				<div class="form-group">
-				<div class="input-group input-icon">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-					</div>
-					<input name="" class="form-control" placeholder="Email" type="email">
-				</div> <!-- input-group.// -->
-				<!-- </div> <!-- form-group// -->
-				<!-- <div class="form-group">
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-					</div>
-					<input class="form-control" placeholder="Kata Sandi" type="password">
-				</div> <!-- input-group.// -->
-				<!-- </div> <!-- form-group// -->
-				<!-- <div class="form-group">
-				<button type="submit" class="btn btn-primary btn-block"> Masuk  </button>
-				</div> <!-- form-group// -->
-				<!-- </form>
-			</article>
-			</div> <!-- card.// -->
-		<!-- </div> --> 
