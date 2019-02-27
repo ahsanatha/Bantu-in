@@ -9,6 +9,11 @@ body{
 	margin: 0;
 }
 
+.card-header{
+	background: transparent;
+	border-bottom: 1px solid #eeeeeeeee;
+}
+
 .cardLoginWith{
 	width: 50%;
 	margin: auto;
@@ -35,3 +40,4 @@ body{
 .login_pln{
 	display: none;
 }
+

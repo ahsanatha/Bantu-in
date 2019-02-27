@@ -11,3 +11,7 @@ html{
     width: 50%;
 	margin: auto;
 }
+
+.card-header{
+    background: transparent;
+}

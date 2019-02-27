@@ -3,26 +3,30 @@
 <head>
     <title>Login Custumer</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" >
+    <script src="../js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/loginast.css">
+    <script src="../js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container-fluid h-100 w-100 d-flex justify-content-center">
         <div class=" card loginpln  col-md-3">
-            <article class="card-body"> 
-                <h4>Please Sign in </h4>
+            <div class="card-header">
+                <h4 class="text-center">Please Sign in </h4>
+            </div>
+            <div class="card-body"> 
                 <form>
                     <div class="form-group">
-                        <div class="input-group input-icon">
+                        <div class="input-group ">
                             <div class="input-group-prepend">
                                 <span class="input-group-text glyphicon glyphicon-envelope"></span>
                             </div>
-                            <input name="" class="form-control" placeholder="Email" type="email">
+                            <input class="form-control" placeholder="Email" type="email">
                         </div> <!-- input-group. -->
                     </div> <!-- form-group// -->
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                <span class="input-group-text "></span>
                             </div>
                             <input class="form-control" placeholder="Kata Sandi" type="password">
                         </div> <!-- input-group.// -->
@@ -31,9 +35,9 @@
                         <button type="submit" class="btn btn-primary btn-block"> Masuk  </button>
                     </div> <!-- form-group// -->
                 </form>
-            </article>	
+            </div>	
         </div> <!-- card.// -->
-    </div>
+    </div>  
 </body>
 </html>
 
