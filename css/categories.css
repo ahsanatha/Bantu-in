@@ -1,0 +1,11 @@
+body{
+
+}
+.content-item{
+    height: 480px;
+    width: 1240px;
+}
+.scroll-horizontal{
+    overflow: auto;
+    white-space: nowrap;
+}

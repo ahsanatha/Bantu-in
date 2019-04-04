@@ -1,0 +1,17 @@
+body{
+    height: 100%;
+    margin: auto;
+}
+
+html{
+    height: 100%;
+}
+
+.loginpln{
+    width: 50%;
+	margin: auto;
+}
+
+.card-header{
+    background: transparent;
+}

@@ -1,5 +1,2 @@
-Web Programming and Bussines Model Digital Project.
+Sebvvah readme. this nothing much until this project done.
 
-
-
-base templates created by Start Bootstrap.
