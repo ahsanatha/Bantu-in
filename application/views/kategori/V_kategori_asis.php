@@ -44,7 +44,7 @@
       
       <div class="container-fluid">
         <div class="d-flex align-items-center">
-          <div class="site-logo mr-auto w-25"><a href="index.html">Bantu.in</a></div>
+          <div class="site-logo mr-auto w-25"><a href="<?php echo base_url(); ?>">Bantu.in</a></div>
 
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -56,7 +56,7 @@
           <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="#contact-section" class="nav-link"><span>Sign Out</span></a></li>
+                <li class="cta"><a href="" class="nav-link"><span>Sign Out</span></a></li>
               </ul>
             </nav>
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
@@ -68,13 +68,13 @@
 
     <div class="intro-section single-cover" id="home-section">
       
-      <div class="slide-1 " style="background-image: url('<?php echo base_url(); ?>assets/images/baby_sitter.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slide-1 " style="background-image: url('<?php echo base_url(); ?>assets/images/asisten.jpg');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
               <div class="row justify-content-center align-items-center text-center">
                 <div class="col-lg-6">
-                  <h1 data-aos="fade-up" data-aos-delay="0">Baby Sitter</h1>
+                  <h1 data-aos="fade-up" data-aos-delay="0">Asisten Rumah Tangga</h1>
                 </div>
 
                 
@@ -92,7 +92,6 @@
           <div class="col-lg-8 mb-5">
 
             <div class="mb-5">
-              <h3 class="text-black">-list-</h3>
               
 
               <div class="row mb-4">
@@ -100,6 +99,40 @@
                   
               </div>
               <!-- isi -->
+              <?php foreach ($asistens as $key => $asisten): ?>
+              <div class="pt-5">
+                <ul class="comment-list">
+
+                  <li class="comment">
+                    <div class="vcard bio">
+                      <img src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Image placeholder">
+                    </div>
+                    <div class="comment-body">
+                      <h3>Nama          : <?php echo $asisten['nama']; ?></h3>
+                      <h3>Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></h3>
+                      <h3>Alamat        : <?php echo $asisten['alamat']; ?></h3>
+                      <h3>Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></h3>
+                      <h3>Instansi      : <?php echo $asisten['instansi']; ?></h3>
+                      <br>
+                      <p><?php echo $asisten['deskripsi']; ?></p>
+                      <br>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <?php endforeach; ?>
+
+
+
+
+              <!-- <?php foreach ($asistens as $key => $asisten): ?>
+                <div class="post-preview">
+                    <h2 class="post-title">
+                      <?php echo $asisten['nama']; ?>
+                    </h2>
+                </div>
+              <?php endforeach; ?> -->
+
             </div>
 
 

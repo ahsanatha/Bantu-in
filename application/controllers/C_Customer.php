@@ -63,10 +63,30 @@ class C_Customer extends CI_Controller {
             $this->load->view('V_registCst');
         }
 
-        public function kategori()
+        public function kategori_baby()
         {
-            $this->load->view('V_kategori');
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_baby', $data);
         }
+
+        public function kategori_suster()
+        {
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_suster', $data);
+        }
+
+        public function kategori_asis()
+        {
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_asis', $data);
+        }
+
 
         public function signinCst()
         {
