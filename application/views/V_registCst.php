@@ -59,7 +59,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Provinsi</label>
                                             <div class="col-sm-8">
-                                                <select class="form-control" id="sel1">
+                                                <select class="form-control" id="wilayah" name="wilayah">
                                                     <?php foreach($provinsi as $p){ ?>
                                                     <option value="<?=$p?>"><?=$p?></option>
                                                     <?php } ?>

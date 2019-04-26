@@ -3,15 +3,16 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
 class C_Customer extends CI_Controller {
 
+    protected  $provinsi = ["ACEH","SUMATERA UTARA","SUMATERA BARAT","RIAU","JAMBI","SUMATERA SELATAN","BENGKULU","LAMPUNG","KEPULAUAN BANGKA BELITUNG",
+    "KEPULAUAN RIAU","DKI JAKARTA","JAWA BARAT","JAWA TENGAH","DI YOGYAKARTA","JAWA TIMUR","BANTEN","BALI","NUSA TENGGARA BARAT",
+    "NUSA TENGGARA TIMUR","KALIMANTAN BARAT","KALIMANTAN TENGAH","KALIMANTAN SELATAN","KALIMANTAN TIMUR","KALIMANTAN UTARA",
+    "SULAWESI UTARA","SULAWESI TENGAH","SULAWESI SELATAN","SULAWESI TENGGARA","GORONTALO","SULAWESI BARAT","MALUKU","MALUKU UTARA",
+    "PAPUA BARAT","PAPUA"];
+
     public function __construct()
     {
         parent::__construct();
         //deklarasi model
-        $provinsi = ["ACEH","SUMATERA UTARA","SUMATERA BARAT","RIAU","JAMBI","SUMATERA SELATAN","BENGKULU","LAMPUNG","KEPULAUAN BANGKA BELITUNG",
-        "KEPULAUAN RIAU","DKI JAKARTA","JAWA BARAT","JAWA TENGAH","DI YOGYAKARTA","JAWA TIMUR","BANTEN","BALI","NUSA TENGGARA BARAT",
-        "NUSA TENGGARA TIMUR","KALIMANTAN BARAT","KALIMANTAN TENGAH","KALIMANTAN SELATAN","KALIMANTAN TIMUR","KALIMANTAN UTARA",
-        "SULAWESI UTARA","SULAWESI TENGAH","SULAWESI SELATAN","SULAWESI TENGGARA","GORONTALO","SULAWESI BARAT","MALUKU","MALUKU UTARA",
-        "PAPUA BARAT","PAPUA"];
         $this->load->model('M_Customer');
     }
 
@@ -22,7 +23,8 @@ class C_Customer extends CI_Controller {
         }
         public function pelanggan()
         {
-            $this->load->view('V_registCst');
+            $datatoview['provinsi'] = $this->provinsi;
+            $this->load->view('V_registCst',$datatoview);
         }
         public function regisCst()
         {
@@ -31,14 +33,13 @@ class C_Customer extends CI_Controller {
 		    $this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[pelanggan.email]',['is_unique'=> 'email sudah terdaftar']);
 		    $this->form_validation->set_rules('password','Password','required|trim|matches[password-re]|min_length[6]',['min_length'=>'password harus lebih dari 6 karakter']);
 		    $this->form_validation->set_rules('password-re','Password-re','required|trim|matches[password]');
-            $this->form_validation->set_rules('wilayah','Wilayah','required|trim');
             $this->form_validation->set_rules('instansi','Instansi','required|trim');
-		    //validation check
+            //validation check
             if($this->form_validation->run()== false){
                //flashdata fail
                 $this->session->set_flashdata('message','<div class ="alert alert-danger role = alert">gagal melakukan registrasi </div>'); 
                 //back to V_RegisCst
-                $this->load->view('V_registCst');
+                $this->pelanggan();
             }
             else {
             //insert data to array
@@ -54,7 +55,7 @@ class C_Customer extends CI_Controller {
                 //flashdata sukses
                 $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
                //back to V_registCst
-                $this->load->view('V_registCst');
+                $this->pelanggan();
             }
         }
         
