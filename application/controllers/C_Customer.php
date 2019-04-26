@@ -52,6 +52,16 @@ class C_Customer extends CI_Controller {
                 $this->load->view('V_registCst');
             }
         }
+        
+        public function landing()
+        {
+            $this->load->view('V_landing');
+        }
+
+        public function kategori()
+        {
+            $this->load->view('V_kategori');
+        }
 
         public function asisten()
         {
