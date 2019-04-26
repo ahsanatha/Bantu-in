@@ -27,7 +27,7 @@
 		</div>
 
 	 	<!-- ini daftar akun Pelanggan -->
-		<div class=" login_pln col-md-6">		
+		<div class=" loginpelanggan col-md-6">		
 				<div class="card" style="width: 500px; margin: auto">
 					<header class="card-header">
 						<a href="loginpln.html" class="float-right btn btn-outline-primary mt-1" id="btn_pln">Log in</a>
@@ -353,16 +353,15 @@
 </html>
 
 <script type="text/javascript">
-	$(function(){
+	$(documet).ready(
+		function(){
 		$('#btn1').click(function(event){
-			$('.cardLoginWith').hide();
+			$('.loginWith').hide();
 			$('.login_pln').show();
 		});
 		$('#btn2').click(function(event){
 			$('.cardLoginWith').hide();
 			$('.login_ast').show();
 		});
-
-
-	});
+	});	
 </script>

@@ -75,12 +75,12 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => '103.28.53.180',
+	'username' => 'ahsanath_bantuin',
+	'password' => 'QK+BIcB%FTb~',
+	'database' => 'ahsanath_dbBantuin',
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => '',	
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
