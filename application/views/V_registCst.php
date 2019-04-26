@@ -10,10 +10,11 @@
 </head>
 
 <body>
-    <div class=" container registAst col-md-7" style="margin-top : 100px;">		
+    <div class=" container registAst col-md-7" style="margin-top : 100px;">	
+    <?php echo $this->session->flashdata('message'); ?>	
 		<div class="card">
 			<header class="card-header">
-    			<a href="<?= site_url('C_loginAs/signinCst')?>" class="float-right btn btn-outline-info mt-1" >Sign in</a>
+    			<a href="<?= site_url('')?>" class="float-right btn btn-outline-info mt-1" >Sign in</a>
 	    		<h4 class="card-title mt-2">Create Account</h4>
 			</header>
 			<div class="card-body">
@@ -22,45 +23,53 @@
             <div class="wrap bg-white ">
                 <div class="card">
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="<?= base_url('C_Customer/regisCst') ?>" method="post">
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Nama </label>
                                 <div class="col-sm-8">
                                     <input type="text" class="form-control" placeholder="Full Name" name="nama">
-                                </div>
+                                    <?=form_error('nama','<small class="text-danger">','</small>');?>
+                                </div>             
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Email </label>
                                 <div class="col-sm-8">
                                     <input placeholder="Your Email" type="email" class="form-control" name="email" >
+                                    <?=form_error('email','<small class="text-danger">','</small>');?>
                                 </div>
 							</div>
 							<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Password </label>
                                 <div class="col-sm-8">
                                     <input placeholder="Password" type="password" class="form-control" name="password">
-								</div>
+                                    <?=form_error('password','<small class="text-danger">','</small>');?>
+                                </div> 
 							</div>
 							<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Re-Password </label>
                                 <div class="col-sm-8">
-                                    <input placeholder="Repeat your Password" type="password" class="form-control" name="re-password">
-								</div>
+                                    <input placeholder="Repeat your Password" type="password" class="form-control" name="password-re">
+                                    <?=form_error('password-re','<small class="text-danger">','</small>');?>
+                                </div>
 							</div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Wilayah</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="wilayah" class="form-control">
+                                    <?=form_error('wilayah','<small class="text-danger">','</small>');?>
                                 </div>
+                               
 							</div>
 							<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Instansi</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="instansi" class="form-control">
+                                    <?=form_error('instansi','<small class="text-danger">','</small>');?>
                                 </div>
+                        
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-md-2"><button class="btn btn-info" type="submit"> <a href="<?= site_url('#')?>" style="color : #fff">Sign Up</a></button></div>
+                                <div class="col-md-2"><button class="btn btn-info" type="submit">Sign Up</button></div>
                             </div>
                         </form>
                     </div>
