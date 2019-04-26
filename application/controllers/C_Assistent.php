@@ -83,6 +83,7 @@ class C_Assistent extends CI_Controller {
                 $_SESSION['idUser'] = $query->row_array()['idAsisten'];
                 $_SESSION['tipeUser'] = 'asisten';
                 echo "login berhasil";
+                
             }else{
                 echo "login gagal";
             };

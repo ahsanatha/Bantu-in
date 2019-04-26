@@ -14,6 +14,7 @@ class C_Customer extends CI_Controller {
         parent::__construct();
         //deklarasi model
         $this->load->model('M_Customer');
+        
     }
     public function index(){
         redirect(base_url());
@@ -41,7 +42,8 @@ class C_Customer extends CI_Controller {
                     'instansi'=>$this->input->post('instansi'),
                     'email'=>$this->input->post('email'),
                     'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
-                    'gambar' =>'default.png'
+                    'gambar' =>'default.png',
+                    'noHp' =>''
                 ];
                 // memanggil method registCst dari model
                 $this->M_Customer->regisCst($data);
@@ -52,8 +54,26 @@ class C_Customer extends CI_Controller {
             }
         }
         public function editProfileCst(){
-
-            $this->load->view('V_editProfileCst');
+            $this->form_validation->set_rules('nama','Nama','required|trim');
+            $this->form_validation->set_rules('instansi','Instansi','required|trim');
+            $this->form_validation->set_rules('noHp','noHp','required|trim');
+            if($this->form_validation->run()== false){
+                $this->load->view('template/header');
+                $this->load->view('V_editProfileCst');
+            }
+            else{
+                $data = [
+                    'idPelanggan'=>$this->session->userdata('idPelanggan'),
+                    'nama' =>$this->input->post('nama'),
+                    'instansi'=>$this->input->post('instansi'),
+                    'noHp' =>$this->input->post('noHp')
+                ];
+                $this->M_Customer->editCst($data);
+                $this->session->set_userdata($this->M_Customer->getCst($this->session->userdata['idPelanggan']));
+                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">edit data berhasil </div>'); 
+                $this->load->view('template/header');
+                $this->load->view('V_editProfileCst');
+            }   
         }
         public function detailAst(){
             $this->load->view('V_detailAsstCst');
@@ -71,7 +91,10 @@ class C_Customer extends CI_Controller {
             if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
                 $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
                 $_SESSION['tipeUser'] = 'pelanggan';
-                echo "login berhasil";
+                $pelanggan = $this->M_Customer->getCst($_SESSION['idUser']);
+                $this->session->set_userdata($pelanggan);
+                $this->load->view('template/header');
+                $this->load->view('V_loginPelanggan');
             }else{
                 echo "login gagal";
             };

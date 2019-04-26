@@ -17,4 +17,11 @@ class M_Customer extends CI_Model{
     public function cekCst($data){
         return $this->db->get_where('pelanggan', $data);
     }
+    public function getCst($id){
+        return $this->db->get_where('pelanggan',['idPelanggan'=>$id])->row_array();
+    }
+    public function editCst($data){
+        $query = 'update pelanggan set nama = "'.$data["nama"].'",instansi = "'.$data["instansi"].'",noHp = "'.$data["noHp"].'" where idPelanggan = '.$data["idPelanggan"].' ';
+        $this->db->query($query);
+    }
 }?>
