@@ -57,49 +57,19 @@ class C_Customer extends CI_Controller {
         }
         public function signin()
         {
-            $this->load->view('V_loginAs');
+            $this->load->view('V_signin');
+            if (isset($this->input->post('email'))){
+                $data = array(
+                    'email' => $this->input->post('email'),
+                    'password' => $this->input->post('password'),
+                );
+            }
         }
 
         public function signup()
         {
             $datatoview['provinsi'] = $this->provinsi;
             $this->load->view('V_registCst',$datatoview);
-        }
-
-        public function kategori_baby()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_baby', $data);
-        }
-
-        public function kategori_suster()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_suster', $data);
-        }
-
-
-        public function kategori_asis()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_asis', $data);
-        }
-
-
-        public function signinCst()
-        {
-            $this->load->view('V_signinCst');
-        }
-
-        public function signinAst()
-        {
-            $this->load->view('V_signinAst');
         }
 
     }
