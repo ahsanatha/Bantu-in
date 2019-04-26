@@ -63,7 +63,9 @@ class C_Customer extends CI_Controller {
 
             $this->load->view('V_editProfileCst');
         }
-
+        public function detailAst(){
+            $this->load->view('V_detailAsstCst');
+        }
         public function signin()
         {
             $this->load->view('V_loginAs');

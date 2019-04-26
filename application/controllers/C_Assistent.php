@@ -62,6 +62,10 @@ class C_Assistent extends CI_Controller {
                 $this->load->view('V_registAst');
             }
         }
+        public function editProfileAst(){
+
+            $this->load->view('V_editProfileAst');
+        }
         public function signinAst()
         {
             $this->load->view('V_signinAst');
