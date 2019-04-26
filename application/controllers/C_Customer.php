@@ -1,7 +1,7 @@
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 
-class C_loginAs extends CI_Controller {
+class C_Customer extends CI_Controller {
 
     public function __construct()
     {
@@ -9,7 +9,7 @@ class C_loginAs extends CI_Controller {
     }
 
 
-        public function index()
+        public function index() 
         {
             $this->load->view('V_loginAs');
         }
