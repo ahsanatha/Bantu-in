@@ -91,7 +91,7 @@
 
                     <div class="container-fluid">
                         <div class="d-flex align-items-center">
-                            <div class="site-logo mr-auto w-25"><a href="#">Bantu.in</a></div>
+                            <div class="site-logo mr-auto w-25"><a href="<?php echo base_url(); ?>">Bantu.in</a></div>
 
                             <div class="mx-auto text-center">
                                 <nav class="site-navigation position-relative text-right" role="navigation">
@@ -184,7 +184,8 @@
                                     </figure>
                                     <div class="course-inner-text py-4 px-4">
                                         <div class="meta"></div>
-                                        <h3><a href="#">Baby Sitter</a></h3>
+                                        <h3><a href="<?php echo site_url('C_Customer/kategori_baby'); ?>">Baby
+                                                Sitter</a></h3>
                                         <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
                                     </div>
                                     <div class="d-flex border-top stats">
@@ -199,7 +200,8 @@
                                     </figure>
                                     <div class="course-inner-text py-4 px-4">
                                         <div class="meta"></div>
-                                        <h3><a href="#">Suster</a></h3>
+                                        <h3><a href="<?php echo site_url('C_Customer/kategori_suster'); ?>">Suster</a>
+                                        </h3>
                                         <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
                                     </div>
                                     <div class="d-flex border-top stats">
@@ -214,7 +216,8 @@
                                     </figure>
                                     <div class="course-inner-text py-4 px-4">
                                         <div class="meta"></div>
-                                        <h3><a href="#">Asisten Rumah Tangga</a></h3>
+                                        <h3><a href="<?php echo site_url('C_Customer/kategori_asis'); ?>">Asisten Rumah
+                                                Tangga</a></h3>
                                         <p>Lorem ipsum dolor sit amet ipsa nulla adipisicing elit. </p>
                                     </div>
                                     <div class="d-flex border-top stats">
