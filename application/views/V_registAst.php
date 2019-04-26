@@ -11,7 +11,7 @@
     <div class=" container registAst col-md-7 py-3">		
 		<div class="card">
 			<header class="card-header">
-                <a href="<?= site_url('C_signinAst')?>" class="float-right btn btn-outline-info mt-1" id="btn_ast">Sign in</a>
+                <a href="<?= site_url('C_loginAs/signinAst')?>" class="float-right btn btn-outline-info mt-1" id="btn_ast">Sign in</a>
 	    		<h4 class="card-title mt-2">Create Account</h4>
 			</header>
 			<div class="card-body">
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <div class="col-md-2"><button class="btn btn-info" type="submit"> <a href="<?= site_url('#')?>">Sign Up</a></button></div>
+                                <div class="col-md-2"><button class="btn btn-info" type="submit"> <a href="<?= site_url('#')?>" style="color : #fff">Sign Up</a></button></div>
                             </div>
                         </form>
                     </div>

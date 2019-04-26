@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/loginast.css')?>">
 </head>
 <body>
-    <div class="container py-5">
+    <div class="container" style="margin-top : 250px; margin-button : 25    0px; margin-right: 500px; margin-left: 500px;">
         <div class="col-sm-5">
             <div class="card">
                 <div class="card-header text-center">Welcome Back</div>

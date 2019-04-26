@@ -17,10 +17,10 @@
                     <div class="card-body">
                         <form action="" autocomplete="off">
 							<div class="form-group">
-								<button type="button" class="btn btn-info btn-block "> <a href="<?= site_url('C_registCst')?>"> Pelanggan</a> </button>
+								<button type="button" class="btn btn-info btn-block "> <a href="<?= site_url('C_loginAs/pelanggan')?>" style="color : #fff;"> Pelanggan</a> </button>
 							</div> 	<!-- form-group// --> 
 							<div class="form-group">
-								<button type="button" class="btn btn-info btn-block"> <a href="<?= site_url('C_registAst')?>">Asisten </a></button>
+								<button type="button" class="btn btn-info btn-block"> <a href="<?= site_url('C_loginAs/asisten')?>" style="color : #fff;">Asisten </a></button>
 							</div> <!-- form-group// -->   
                         </form>
                     </div>
