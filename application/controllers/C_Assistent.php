@@ -51,7 +51,8 @@ class C_Assistent extends CI_Controller {
                     'wilayah'=>$this->input->post('wilayah'),
                     'instansi'=>$this->input->post('instansi'),
                     'email'=>$this->input->post('email'),
-                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT)
+                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
+                    'gambar' =>'default.png'
                 ];
                 // memanggil method registAsst dari M_Asst
                 $this->M_Assistent->regisAst($data);
@@ -61,7 +62,7 @@ class C_Assistent extends CI_Controller {
                 $this->load->view('V_registAst');
             }
         }
-        public function signinCst()
+        public function signinAst()
         {
             $this->load->view('V_signinAst');
         }

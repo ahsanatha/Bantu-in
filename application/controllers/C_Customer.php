@@ -47,7 +47,8 @@ class C_Customer extends CI_Controller {
                     'wilayah' =>$this->input->post('wilayah'),
                     'instansi'=>$this->input->post('instansi'),
                     'email'=>$this->input->post('email'),
-                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT)
+                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
+                    'gambar' =>'default.png'
                 ];
                 // memanggil method registCst dari model
                 $this->M_Customer->regisCst($data);
@@ -57,10 +58,14 @@ class C_Customer extends CI_Controller {
                 $this->load->view('V_registCst');
             }
         }
-        
+        public function editProfileCst(){
+
+            $this->load->view('V_editProfileCst');
+        }
+
         public function signin()
         {
-            $this->load->view('V_signinCst');
+            $this->load->view('V_loginAs');
         }
 
         public function signup()
