@@ -14,7 +14,7 @@
     <?php echo $this->session->flashdata('message'); ?>	
 		<div class="card">
 			<header class="card-header">
-    			<a href="<?= site_url('')?>" class="float-right btn btn-outline-info mt-1" >Sign in</a>
+    			<a href="<?php echo site_url('C_Customer/signin'); ?>" class="float-right btn btn-outline-info mt-1" >Sign in</a>
 	    		<h4 class="card-title mt-2">Create Account</h4>
 			</header>
 			<div class="card-body">
