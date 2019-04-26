@@ -15,7 +15,7 @@
         <div class="card">
             <header class="card-header">
                 <a href="<?= site_url('')?>" class="float-right btn btn-outline-info mt-1">Sign in</a>
-                <h4 class="card-title mt-2">Create Account</h4>
+                <h4 class="card-title mt-2">Create Account Pelanggan</h4>
             </header>
             <div class="card-body">
                 <div class="row pb-2">
