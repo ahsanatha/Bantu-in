@@ -18,7 +18,7 @@ class C_Customer extends CI_Controller {
 
         public function index() 
         {
-            $this->load->view('V_loginAs');
+            $this->load->view('V_landing');
         }
         public function pelanggan()
         {
@@ -58,9 +58,14 @@ class C_Customer extends CI_Controller {
             }
         }
         
-        public function landing()
+        public function signin()
         {
-            $this->load->view('V_landing');
+            $this->load->view('V_signinCst');
+        }
+
+        public function signup()
+        {
+            $this->load->view('V_registCst');
         }
 
         public function kategori()

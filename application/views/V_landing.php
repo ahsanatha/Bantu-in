@@ -58,8 +58,8 @@
           <div class="ml-auto w-25">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                <li class="cta"><a href="" class="nav-link"><span>Sign In</span></a></li>
-                <li class="cta"><a href="" class="nav-link"><span>Sign Up</span></a></li>
+                <li class="cta"><a href="<?php echo site_url('C_Customer/signin'); ?>" class="nav-link"><span>Sign In</span></a></li>
+                <li class="cta"><a href="<?php echo site_url('C_Customer/signup'); ?>" class="nav-link"><span>Sign Up</span></a></li>
               </ul>
             </nav>
             <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
