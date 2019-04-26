@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-header text-center">Welcome Back</div>
                 <div class="card-body">
-                    <form action="" method="POST" class="col-sm-12 ">
+                    <form action="<?=base_url('C_'.$tipe.'/doSignIn')?>" method="POST" class="col-sm-12 ">
                         <div class="form-label-group py-2">
                             <input type="email" id="inputEmail" name="email" class="form-control"
                                 placeholder="Email address" required autofocus>
