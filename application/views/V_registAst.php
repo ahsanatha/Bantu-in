@@ -25,14 +25,14 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Nama </label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nama" class="form-control" placeholder="Full Name">
+                                    <input type="text" name="nama"  value="<?= set_value('nama') ?>" class="form-control" placeholder="Full Name">
                                     <?=form_error('nama','<small class="text-danger">','</small>');?>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Email </label>
                                 <div class="col-sm-8">
-                                    <input placeholder="Your Email" name="email" type="email" class="form-control">
+                                    <input placeholder="Your Email"  value="<?= set_value('email') ?>" name="email" type="email" class="form-control">
                                     <?=form_error('email','<small class="text-danger">','</small>');?>
                                 </div>
 														</div>
@@ -53,49 +53,49 @@
 														<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">NIK</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="nik" class="form-control">
+                                    <input type="text" value="<?= set_value('nik') ?>" name="nik" class="form-control">
                                     <?=form_error('nik','<small class="text-danger">','</small>');?>
                                 </div>
 														</div>
 														<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Nomor Telpon</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="noTlp" class="form-control">
+                                    <input type="text" name="noTlp"  value="<?= set_value('noTlp') ?>" class="form-control">
                                     <?=form_error('noTlp','<small class="text-danger">','</small>');?>
                                 </div>
 														</div>
 														<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-8">
-                                    <input type="date" name="tglLahir" class="form-control">
+                                    <input type="date"  value="<?= set_value('tglLahir') ?>" name="tglLahir" class="form-control">
                                     <?=form_error('tglLahir','<small class="text-danger">','</small>');?>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea rows="3" name="alamat" class="form-control"></textarea>
+                                    <textarea rows="3"  value="<?= set_value('alamat') ?>" name="alamat" class="form-control"></textarea>
                                     <?=form_error('alamat','<small class="text-danger">','</small>');?>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Wilayah</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="wilayah" class="form-control">
+                                    <input type="text"  value="<?= set_value('wilayah') ?>" name="wilayah" class="form-control">
                                     <?=form_error('wilayah','<small class="text-danger">','</small>');?>
                                 </div>
 														</div>
 														<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Kode Pos</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="kodePos" class="form-control">
+                                    <input type="text" value="<?= set_value('kodePos') ?>" name="kodePos" class="form-control">
                                     <?=form_error('kodePost','<small class="text-danger">','</small>');?>
                                 </div>
 														</div>
 														<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Instansi</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="instansi" class="form-control">
+                                    <input type="text"  value="<?= set_value('instansi') ?>" name="instansi" class="form-control">
                                     <?=form_error('instansi','<small class="text-danger">','</small>');?>
                                 </div>
                             </div>

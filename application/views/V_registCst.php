@@ -27,14 +27,14 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Nama </label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" placeholder="Full Name" name="nama">
+                                    <input type="text" class="form-control" value="<?= set_value('nama') ?>" placeholder="Full Name" name="nama">
                                     <?=form_error('nama','<small class="text-danger">','</small>');?>
                                 </div>             
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Email </label>
                                 <div class="col-sm-8">
-                                    <input placeholder="Your Email" type="email" class="form-control" name="email" >
+                                    <input placeholder="Your Email" value="<?= set_value('email') ?>" type="email" class="form-control" name="email" >
                                     <?=form_error('email','<small class="text-danger">','</small>');?>
                                 </div>
 							</div>
@@ -55,7 +55,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Wilayah</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="wilayah" class="form-control">
+                                    <input type="text" value="<?= set_value('wilayah') ?>" name="wilayah" class="form-control">
                                     <?=form_error('wilayah','<small class="text-danger">','</small>');?>
                                 </div>
                                
@@ -63,7 +63,7 @@
 							<div class="form-group row">
                                 <label class="col-sm-4 col-form-label">Instansi</label>
                                 <div class="col-sm-8">
-                                    <input type="text" name="instansi" class="form-control">
+                                    <input type="text" value="<?= set_value('instansi') ?>" name="instansi" class="form-control">
                                     <?=form_error('instansi','<small class="text-danger">','</small>');?>
                                 </div>
                         
