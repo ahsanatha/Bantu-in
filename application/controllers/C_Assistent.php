@@ -61,5 +61,9 @@ class C_Assistent extends CI_Controller {
                 $this->load->view('V_registAst');
             }
         }
+        public function signinCst()
+        {
+            $this->load->view('V_signinAst');
+        }
 }     
 ?>

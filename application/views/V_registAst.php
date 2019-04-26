@@ -12,7 +12,7 @@
 		<div class="card">
         <?php echo $this->session->flashdata('message'); ?>	
 			<header class="card-header">
-                <a href="<?= site_url('C_loginAs/signinAst')?>" class="float-right btn btn-outline-info mt-1" id="btn_ast">Sign in</a>
+                <a href="<?= base_url('C_Customer/signinAst')?>" class="float-right btn btn-outline-info mt-1" id="btn_ast">Sign in</a>
 	    		<h4 class="card-title mt-2">Create Account</h4>
 			</header>
 			<div class="card-body">

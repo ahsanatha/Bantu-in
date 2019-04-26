@@ -63,11 +63,6 @@ class C_Customer extends CI_Controller {
             $this->load->view('V_kategori');
         }
 
-        public function asisten()
-        {
-            $this->load->view('V_registAst');
-        }
-
         public function signinCst()
         {
             $this->load->view('V_signinCst');
