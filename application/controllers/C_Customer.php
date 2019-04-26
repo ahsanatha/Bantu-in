@@ -15,6 +15,9 @@ class C_Customer extends CI_Controller {
         //deklarasi model
         $this->load->model('M_Customer');
     }
+    public function index(){
+        redirect(base_url());
+    }
         public function regisCst()
         {
             //validation form
@@ -57,49 +60,27 @@ class C_Customer extends CI_Controller {
         }
         public function signin()
         {
-            $this->load->view('V_loginAs');
+            $data['tipe'] = 'Customer';
+            $this->load->view('V_signin',$data);
+        }
+        public function doSignIn(){
+            $data = array(
+                'email' => $this->input->post('email'),
+            );
+            $query = $this->M_Customer->cekCst($data);
+            if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
+                $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
+                $_SESSION['tipeUser'] = 'pelanggan';
+                echo "login berhasil";
+            }else{
+                echo "login gagal";
+            };
         }
 
         public function signup()
         {
             $datatoview['provinsi'] = $this->provinsi;
             $this->load->view('V_registCst',$datatoview);
-        }
-
-        public function kategori_baby()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_baby', $data);
-        }
-
-        public function kategori_suster()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_suster', $data);
-        }
-
-
-        public function kategori_asis()
-        {
-            $query = $this->M_Customer->getAss();
-            $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_asis', $data);
-        }
-
-
-        public function signinCst()
-        {
-            $this->load->view('V_signinCst');
-        }
-
-        public function signinAst()
-        {
-            $this->load->view('V_signinAst');
         }
 
     }

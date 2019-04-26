@@ -12,5 +12,9 @@ class M_Customer extends CI_Model{
 		$filter = $this->input->get('find');
 		$this->db->like('nama', $filter);
  		return $this->db->get("asisten");
-	}
+    }
+    
+    public function cekCst($data){
+        return $this->db->get_where('pelanggan', $data);
+    }
 }?>

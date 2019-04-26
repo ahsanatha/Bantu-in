@@ -2,22 +2,24 @@
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 
 class C_Assistent extends CI_Controller {
-
+    protected  $provinsi = ["ACEH","SUMATERA UTARA","SUMATERA BARAT","RIAU","JAMBI","SUMATERA SELATAN","BENGKULU","LAMPUNG","KEPULAUAN BANGKA BELITUNG",
+    "KEPULAUAN RIAU","DKI JAKARTA","JAWA BARAT","JAWA TENGAH","DI YOGYAKARTA","JAWA TIMUR","BANTEN","BALI","NUSA TENGGARA BARAT",
+    "NUSA TENGGARA TIMUR","KALIMANTAN BARAT","KALIMANTAN TENGAH","KALIMANTAN SELATAN","KALIMANTAN TIMUR","KALIMANTAN UTARA",
+    "SULAWESI UTARA","SULAWESI TENGAH","SULAWESI SELATAN","SULAWESI TENGGARA","GORONTALO","SULAWESI BARAT","MALUKU","MALUKU UTARA",
+    "PAPUA BARAT","PAPUA"];
     public function __construct()
     {
         parent::__construct();
         //deklarasi model
         $this->load->model('M_Assistent');
     }
-
-
-        public function index() 
-        {
-            $this->load->view('V_loginAs');
+        public function index(){
+            redirect(base_url());
         }
-        public function assistent()
+        public function signup()
         {
-            $this->load->view('V_registAst');
+            $datatoview['provinsi'] = $this->provinsi;
+            $this->load->view('V_registAst',$datatoview);
         }
         public function registAst()
         {
@@ -30,7 +32,7 @@ class C_Assistent extends CI_Controller {
             $this->form_validation->set_rules('noTlp','NoTlp','required|trim');
             $this->form_validation->set_rules('tglLahir','tglLahir','required|trim');
             $this->form_validation->set_rules('alamat','Alamat','required|trim');
-            $this->form_validation->set_rules('wilayah','Wilayah','required|trim');
+            //$this->form_validation->set_rules('wilayah','Wilayah','required|trim');
             $this->form_validation->set_rules('kodePos','KodePos','required|trim');
             $this->form_validation->set_rules('instansi','Instansi','required|trim');
 		    //validation check
@@ -38,7 +40,7 @@ class C_Assistent extends CI_Controller {
                //flashdata fail
                 $this->session->set_flashdata('message','<div class ="alert alert-danger role = alert">gagal melakukan registrasi </div>'); 
                 //back to V_RegistAst
-                $this->load->view('V_registAst');
+                $this->signup();
             }
             else {
             //insert data to array
@@ -52,23 +54,38 @@ class C_Assistent extends CI_Controller {
                     'instansi'=>$this->input->post('instansi'),
                     'email'=>$this->input->post('email'),
                     'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
-                    'gambar' =>'default.png'
+                    'gambar' =>'default.png',
+                    'deskripsi' => $this->input->post('deskripsi'),
                 ];
                 // memanggil method registAsst dari M_Asst
                 $this->M_Assistent->regisAst($data);
                 //flashdata sukses
                 $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
                //back to V_registCst
-                $this->load->view('V_registAst');
+                $this->signup();
             }
         }
         public function editProfileAst(){
 
             $this->load->view('V_editProfileAst');
         }
-        public function signinAst()
+        public function signin()
         {
-            $this->load->view('V_signinAst');
+            $data['tipe'] = 'Assistent';
+            $this->load->view('V_signin',$data);
+        }
+        public function doSignIn(){
+            $data = array(
+                'email' => $this->input->post('email'),
+            );
+            $query = $this->M_Assistent->cekAst($data);
+            if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
+                $_SESSION['idUser'] = $query->row_array()['idAsisten'];
+                $_SESSION['tipeUser'] = 'asisten';
+                echo "login berhasil";
+            }else{
+                echo "login gagal";
+            };
         }
         
 }     

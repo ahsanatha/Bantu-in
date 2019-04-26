@@ -14,7 +14,7 @@
         <div class="card">
             <?php echo $this->session->flashdata('message'); ?>
             <header class="card-header">
-                <a href="<?= base_url('C_Customer/signinAst')?>" class="float-right btn btn-outline-info mt-1"
+                <a href="<?= base_url('C_Customer/signin')?>" class="float-right btn btn-outline-info mt-1"
                     id="btn_ast">Sign in</a>
                 <h4 class="card-title mt-2">Create Account</h4>
             </header>
@@ -90,11 +90,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Wilayah</label>
+                                            <label class="col-sm-4 col-form-label">Provinsi</label>
                                             <div class="col-sm-8">
-                                                <input type="text" value="<?= set_value('wilayah') ?>" name="wilayah"
-                                                    class="form-control">
-                                                <?=form_error('wilayah','<small class="text-danger">','</small>');?>
+                                                <select class="form-control" id="wilayah" name="wilayah">
+                                                    <?php foreach($provinsi as $p){ ?>
+                                                    <option value="<?=$p?>"><?=$p?></option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -113,10 +115,19 @@
                                                 <?=form_error('instansi','<small class="text-danger">','</small>');?>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Deskripsi Diri</label>
+                                            <div class="col-sm-8">
+                                                <textarea rows="3" value="<?= set_value('alamat') ?>" name="deskripsi"
+                                                    class="form-control"></textarea>
+                                                <?=form_error('alamat','<small class="text-danger">','</small>');?>
+                                            </div>
+                                        </div>
                                         <div class="row justify-content-center">
                                             <div class="col-md-2"><button class="btn btn-info" type="submit">Sign
                                                     Up</button></div>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>

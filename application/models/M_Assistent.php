@@ -6,4 +6,8 @@ class M_Assistent extends CI_Model{
     {
         $this->db->insert('asisten',$data);
     }
+    public function cekAst($data){
+        return $this->db->get_where('asisten', $data);
+    }
+    
 }?>
