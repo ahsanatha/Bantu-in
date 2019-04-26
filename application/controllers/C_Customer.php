@@ -15,17 +15,6 @@ class C_Customer extends CI_Controller {
         //deklarasi model
         $this->load->model('M_Customer');
     }
-
-
-        public function index() 
-        {
-            $this->load->view('V_landing');
-        }
-        public function pelanggan()
-        {
-            $datatoview['provinsi'] = $this->provinsi;
-            $this->load->view('V_registCst',$datatoview);
-        }
         public function regisCst()
         {
             //validation form
@@ -39,7 +28,7 @@ class C_Customer extends CI_Controller {
                //flashdata fail
                 $this->session->set_flashdata('message','<div class ="alert alert-danger role = alert">gagal melakukan registrasi </div>'); 
                 //back to V_RegisCst
-                $this->pelanggan();
+                $this->signup();
             }
             else {
             //insert data to array
@@ -56,7 +45,7 @@ class C_Customer extends CI_Controller {
                 //flashdata sukses
                 $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
                //back to V_registCst
-                $this->pelanggan();
+                $this->signup();
             }
         }
         public function editProfileCst(){
@@ -73,7 +62,8 @@ class C_Customer extends CI_Controller {
 
         public function signup()
         {
-            $this->load->view('V_registCst');
+            $datatoview['provinsi'] = $this->provinsi;
+            $this->load->view('V_registCst',$datatoview);
         }
 
         public function kategori()
@@ -81,15 +71,6 @@ class C_Customer extends CI_Controller {
             $this->load->view('V_kategori');
         }
 
-        public function signinCst()
-        {
-            $this->load->view('V_signinCst');
-        }
-
-        public function signinAst()
-        {
-            $this->load->view('V_signinAst');
-        }
 
     }
 ?>
