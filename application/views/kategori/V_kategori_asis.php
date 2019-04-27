@@ -108,7 +108,7 @@
               <!-- isi -->
               <?php foreach ($asistens as $key => $asisten): ?>    
               <div class="card m-3" style="width: 18rem;">
-                <img class="card-img-top" src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Card image cap">
+                <img class="card-img-top img-fluid w-50 rounded-circle mx-auto mb-4" src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $asisten['nama']; ?></h5>
                   <p class="card-text">Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></p>
