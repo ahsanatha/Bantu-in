@@ -15,6 +15,11 @@ class C_Customer extends CI_Controller {
         //deklarasi model
         $this->load->model('M_Customer');
     }
+        public function home()
+        {
+            $this->load->view('template/header');
+            $this->load->view('V_loginPelanggan');
+        }
         public function regisCst()
         {
             //validation form
@@ -52,29 +57,27 @@ class C_Customer extends CI_Controller {
             //validation form
 		    $this->form_validation->set_rules('nama','Nama','required|trim');
             $this->form_validation->set_rules('instansi','Instansi','required|trim');
+            $this->form_validation->set_rules('noHp','noHp','required|trim');
             //validation check
             if($this->form_validation->run()== false){
-               //flashdata fail
-                $this->session->set_flashdata('message','<div class ="alert alert-danger role = alert">gagal melakukan registrasi </div>'); 
-                //back to V_RegisCst
+               //flashdata fail 
+             
                 $this->load->view('V_editProfileCst');
             }
             else {
             //insert data to array
                 $data = [
                     'nama' =>$this->input->post('nama'),
-                    'wilayah' =>$this->input->post('wilayah'),
                     'instansi'=>$this->input->post('instansi'),
-                    'email'=>$this->input->post('email'),
-                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
-                    'gambar' =>'default.png'
+                    'noHp' =>$this->input->post('noHp')
                 ];
-                // memanggil method registCst dari model
-                $this->M_Customer->regisCst($data);
+               
+                $this->M_Customer->editCst($data);
                 //flashdata sukses
+                $this->session->set_userdata($this->M_Customer->getCst($_SESSION['idUser']));
                 $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
-               //back to V_registCst
-                $this->signup();
+                
+                $this->load->view('V_editProfileCst');
             }
             
         }
@@ -137,9 +140,9 @@ class C_Customer extends CI_Controller {
                 $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
                 $_SESSION['tipeUser'] = 'customer';
                 $data = $this->M_Customer->getCst($_SESSION['idUser']);
-                var_dump($data);
-                //$this->session->set_userdata($data);
-                echo "login berhasil";
+                $this->session->set_userdata($data);
+                $this->load->view('template/header');
+                $this->load->view('V_loginPelanggan');
             }else{
                 echo "login gagal";
             };
