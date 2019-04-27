@@ -16,6 +16,10 @@ class C_Assistent extends CI_Controller {
         public function index(){
             redirect(base_url());
         }
+        public function home(){
+            $this->load->view('template/headerAst');
+            $this->load->view('V_astLogin');
+        }
         public function signup()
         {
             $datatoview['provinsi'] = $this->provinsi;
@@ -83,9 +87,10 @@ class C_Assistent extends CI_Controller {
                 $_SESSION['idUser'] = $query->row_array()['idAsisten'];
                 $_SESSION['tipeUser'] = 'asisten';
                 $data = $this->M_Assistent->getAst($_SESSION['idUser']);
-                var_dump($data);
-                //$this->session->set_userdata($data);
-                
+                $this->session->set_userdata($data);
+                //var_dump($this->session->userdata['nama']);
+                $this->load->view('template/headerAst');
+                $this->load->view('V_astLogin');
             }else{
                 echo "login gagal";
             };
