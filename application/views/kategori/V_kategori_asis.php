@@ -99,25 +99,26 @@
                   
               </div>
               <!-- isi -->
-              <?php foreach ($asistens as $key => $asisten): ?>
-              <div class="pt-5 col-md-10">
-                  <li class="comment">
-                    <div class="vcard bio">
-                      <img src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Image placeholder">
-                    </div>
-                    <div class="comment-body">
-                      <h3>Nama          : <?php echo $asisten['nama']; ?></h3>
-                      <h3>Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></h3>
-                      <h3>Alamat        : <?php echo $asisten['alamat']; ?></h3>
-                      <h3>Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></h3>
-                      <h3>Instansi      : <?php echo $asisten['instansi']; ?></h3>
-                      <br>
-                      <p><?php echo $asisten['deskripsi']; ?></p>
-                      <br>
-                    </div>
-                  </li>
-                  <br>
-              </div>
+              <?php foreach ($asistens as $key => $asisten): ?>    
+                <div class="pt-5 col-md-12 centered text-center">
+                    <li class="comment">
+                      <div class="vcard bio centered">
+                        <img src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Image placeholder">
+                      </div>
+                      <div class="comment-body centered">
+                        <h3>Nama          : <?php echo $asisten['nama']; ?></h3>
+                        <h3>Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></h3>
+                        <h3>Alamat        : <?php echo $asisten['alamat']; ?></h3>
+                        <h3>Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></h3>
+                        <h3>Instansi      : <?php echo $asisten['instansi']; ?></h3>
+                        <br>
+                        <p><?php echo $asisten['deskripsi']; ?></p>
+                        <br>
+                        <button type="button" class="btn btn-primary">lelang</button>
+                      </div>
+                    </li>
+                    <br>
+                </div>
               <?php endforeach; ?>
 
 
