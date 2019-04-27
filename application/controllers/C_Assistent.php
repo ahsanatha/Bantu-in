@@ -25,7 +25,7 @@ class C_Assistent extends CI_Controller {
         {
              //validation form
 		    $this->form_validation->set_rules('nama','Nama','required|trim');
-		    $this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[pelanggan.email]',['is_unique'=> 'email sudah terdaftar']);
+		    $this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[asisten.email]',['is_unique'=> 'email sudah terdaftar']);
 		    $this->form_validation->set_rules('password','Password','required|trim|matches[password-re]|min_length[6]',['min_length'=>'password harus lebih dari 6 karakter']);
 		    $this->form_validation->set_rules('password-re','Password-re','required|trim|matches[password]');
             $this->form_validation->set_rules('nik','Nik','required|trim');
@@ -82,7 +82,9 @@ class C_Assistent extends CI_Controller {
             if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
                 $_SESSION['idUser'] = $query->row_array()['idAsisten'];
                 $_SESSION['tipeUser'] = 'asisten';
-                echo "login berhasil";
+                $data = $this->M_Assistent->getAst($_SESSION['idUser']);
+                var_dump($data);
+                //$this->session->set_userdata($data);
                 
             }else{
                 echo "login gagal";
