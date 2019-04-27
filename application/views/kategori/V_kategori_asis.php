@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/aos.css">
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/simple-sidebar.css">
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -82,68 +84,53 @@
             </div>
             
           </div>
+
         </div>
       </div>
     </div>
-    
-    <div class="site-section">
-      <div class="container">
+
+    <div class="d-flex" id="wrapper">
+
+          <!-- Sidebar -->
+          <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="list-group list-group-flush">
+              <a href="<?php echo site_url('C_Customer/kategori_asis');?>" class=" font-weight-bold list-group-item list-group-item-action active">Asisten Rumah Tangga</a>
+              <a href="<?php echo site_url('C_Customer/kategori_suster');?>" class="font-weight-bold list-group-item list-group-item-action bg-light">Suster</a>
+              <a href="<?php echo site_url('C_Customer/kategori_baby');?>" class="font-weight-bold list-group-item list-group-item-action bg-light">Baby sitter</a>
+            </div>
+          </div>
+          <!-- isi -->
+      <div class="m-5">
         <div class="row">
-          <div class="col-lg-8 mb-5">
-
+          <div class="">
             <div class="mb-5">
-              
-
-              <div class="row mb-4">
-                <div class="col-md-6">
-                  
-              </div>
+              <div class="row">
               <!-- isi -->
               <?php foreach ($asistens as $key => $asisten): ?>    
-                <div class="pt-5 col-md-12 centered text-center">
-                    <li class="comment">
-                      <div class="vcard bio centered">
-                        <img src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Image placeholder">
-                      </div>
-                      <div class="comment-body centered">
-                        <h3>Nama          : <?php echo $asisten['nama']; ?></h3>
-                        <h3>Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></h3>
-                        <h3>Alamat        : <?php echo $asisten['alamat']; ?></h3>
-                        <h3>Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></h3>
-                        <h3>Instansi      : <?php echo $asisten['instansi']; ?></h3>
-                        <br>
-                        <p><?php echo $asisten['deskripsi']; ?></p>
-                        <br>
-                        <button type="button" class="btn btn-primary">lelang</button>
-                      </div>
-                    </li>
-                    <br>
+              <div class="card m-3" style="width: 18rem;">
+                <img class="card-img-top" src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $asisten['nama']; ?></h5>
+                  <p class="card-text">Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></p>
+                  <p class="card-text">Alamat        : <?php echo $asisten['alamat']; ?></p>
+                  <p class="card-text">Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></p>
+                  <p class="card-text">Instansi      : <?php echo $asisten['instansi']; ?></p>
+                  <p class="card-text"><?php echo $asisten['deskripsi']; ?></p>
                 </div>
+
+                  <a href="#" class="btn btn-primary">Lelang</a>
+              </div>
+
               <?php endforeach; ?>
 
-              
-
-
-
-
-              <!-- <?php foreach ($asistens as $key => $asisten): ?>
-                <div class="post-preview">
-                    <h2 class="post-title">
-                      <?php echo $asisten['nama']; ?>
-                    </h2>
-                </div>
-              <?php endforeach; ?> -->
-
             </div>
-
-
-
-
           </div>
           
         </div>
       </div>
     </div>
+    
+    
 
     
      
