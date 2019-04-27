@@ -14,14 +14,6 @@ class C_Customer extends CI_Controller {
         parent::__construct();
         //deklarasi model
         $this->load->model('M_Customer');
-        
-    }
-    public function index(){
-        redirect(base_url());
-    }
-    public function home(){
-        $this->load->view('template/header');
-        $this->load->view('V_loginPelanggan');
     }
         public function regisCst()
         {
@@ -46,8 +38,7 @@ class C_Customer extends CI_Controller {
                     'instansi'=>$this->input->post('instansi'),
                     'email'=>$this->input->post('email'),
                     'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
-                    'gambar' =>'default.png',
-                    'noHp' =>''
+                    'gambar' =>'default.png'
                 ];
                 // memanggil method registCst dari model
                 $this->M_Customer->regisCst($data);
@@ -58,50 +49,15 @@ class C_Customer extends CI_Controller {
             }
         }
         public function editProfileCst(){
-            $this->form_validation->set_rules('nama','Nama','required|trim');
-            $this->form_validation->set_rules('instansi','Instansi','required|trim');
-            $this->form_validation->set_rules('noHp','noHp','required|trim');
-            if($this->form_validation->run()== false){
-                $this->load->view('template/header');
-                $this->load->view('V_editProfileCst');
-            }
-            else{
-                $data = [
-                    'idPelanggan'=>$this->session->userdata('idPelanggan'),
-                    'nama' =>$this->input->post('nama'),
-                    'instansi'=>$this->input->post('instansi'),
-                    'noHp' =>$this->input->post('noHp')
-                ];
-                $this->M_Customer->editCst($data);
-                $this->session->set_userdata($this->M_Customer->getCst($this->session->userdata['idPelanggan']));
-                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">edit data berhasil </div>'); 
-                $this->load->view('template/header');
-                $this->load->view('V_editProfileCst');
-            }   
+
+            $this->load->view('V_editProfileCst');
         }
         public function detailAst(){
             $this->load->view('V_detailAsstCst');
         }
         public function signin()
         {
-            $data['tipe'] = 'Customer';
-            $this->load->view('V_signin',$data);
-        }
-        public function doSignIn(){
-            $data = array(
-                'email' => $this->input->post('email'),
-            );
-            $query = $this->M_Customer->cekCst($data);
-            if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
-                $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
-                $_SESSION['tipeUser'] = 'pelanggan';
-                $pelanggan = $this->M_Customer->getCst($_SESSION['idUser']);
-                $this->session->set_userdata($pelanggan);
-                $this->load->view('template/header');
-                $this->load->view('V_loginPelanggan');
-            }else{
-                echo "login gagal";
-            };
+            $this->load->view('V_loginAs');
         }
 
         public function signup()
@@ -109,8 +65,42 @@ class C_Customer extends CI_Controller {
             $datatoview['provinsi'] = $this->provinsi;
             $this->load->view('V_registCst',$datatoview);
         }
-        public function logout(){
-            $this->load->view('C_Customer');
+
+        public function kategori_baby()
+        {
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_baby', $data);
         }
+
+        public function kategori_suster()
+        {
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_suster', $data);
+        }
+
+
+        public function kategori_asis()
+        {
+            $query = $this->M_Customer->getAss();
+            $data['asistens'] = $query->result_array(); 
+
+            $this->load->view('kategori/V_kategori_asis', $data);
+        }
+
+
+        public function signinCst()
+        {
+            $this->load->view('V_signinCst');
+        }
+
+        public function signinAst()
+        {
+            $this->load->view('V_signinAst');
+        }
+
     }
 ?>
