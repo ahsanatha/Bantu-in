@@ -19,6 +19,10 @@ class C_Customer extends CI_Controller {
     public function index(){
         redirect(base_url());
     }
+    public function home(){
+        $this->load->view('template/header');
+        $this->load->view('V_loginPelanggan');
+    }
         public function regisCst()
         {
             //validation form
@@ -105,6 +109,8 @@ class C_Customer extends CI_Controller {
             $datatoview['provinsi'] = $this->provinsi;
             $this->load->view('V_registCst',$datatoview);
         }
-
+        public function logout(){
+            $this->load->view('C_Customer');
+        }
     }
 ?>
