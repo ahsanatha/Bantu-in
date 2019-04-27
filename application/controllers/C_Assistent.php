@@ -37,7 +37,7 @@ class C_Assistent extends CI_Controller {
             $this->form_validation->set_rules('tglLahir','tglLahir','required|trim');
             $this->form_validation->set_rules('alamat','Alamat','required|trim');
             //$this->form_validation->set_rules('wilayah','Wilayah','required|trim');
-            $this->form_validation->set_rules('kodePos','KodePos','required|trim');
+            //$this->form_validation->set_rules('kodePos','KodePos','required|trim');
             $this->form_validation->set_rules('instansi','Instansi','required|trim');
 		    //validation check
             if($this->form_validation->run()== false){
@@ -70,8 +70,39 @@ class C_Assistent extends CI_Controller {
             }
         }
         public function editProfileAst(){
-            $this->load->view('template/headerAst');
-            $this->load->view('V_editProfileAst');
+            $this->form_validation->set_rules('nama','Nama','required|trim');
+		    $this->form_validation->set_rules('nik','Nik','required|trim');
+            $this->form_validation->set_rules('noTlp','NoTlp','required|trim');
+            $this->form_validation->set_rules('tglLahir','tglLahir','required|trim');
+            $this->form_validation->set_rules('alamat','Alamat','required|trim');
+            //$this->form_validation->set_rules('wilayah','Wilayah','required|trim');
+            $this->form_validation->set_rules('instansi','Instansi','required|trim');
+		    //validation check
+            if($this->form_validation->run()== false){
+               //flashdata fail
+                //back to V_RegistAst
+                $this->load->view('template/headerAst');
+                $this->load->view('V_editProfileAst');
+            }
+            else {
+            //insert data to array
+                $data = [
+                    'nama' =>$this->input->post('nama'),
+                    'nik' =>$this->input->post('nik'),
+                    'tglLahir' =>$this->input->post('tglLahir'),
+                    'alamat' =>$this->input->post('alamat'),
+                    'nomorTelpon'=>$this->input->post('noTlp'),
+                    'instansi'=>$this->input->post('instansi'),
+                    'deskripsi' => $this->input->post('deskripsi'),
+                ];
+                    //var_dump($data);
+                $this->M_Assistent->editAst($data);
+                $this->session->set_userdata($this->M_Assistent->getAst($_SESSION['idUser']));
+                //flashdata sukses
+                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Edit profile berhasil </div>'); 
+               $this->load->view('template/headerAst');
+               $this->load->view('V_editProfileAst');
+            }
         }
         public function signin()
         {

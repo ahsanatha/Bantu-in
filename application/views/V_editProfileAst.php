@@ -69,7 +69,7 @@
             <div class="tab-pane active" id="home">
             <?php echo $this->session->flashdata('message'); ?>
                 <hr>
-                  <form class="form" action="<?= base_url('C_Customer/editProfileCst') ?>" method="post" id="registrationForm">
+                  <form class="form" action="<?= base_url('C_Assistent/editProfileAst') ?>" method="post" id="registrationForm">
                       <div class="form-group">
                           
                           <div class="col-xs-6">
@@ -96,7 +96,7 @@
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>Nomor Handphone</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" value="<?= $this->load->session->userdata('nomorTelpon') ?>" placeholder="enter mobile number" title="masukan nomor handphone anda">
+                              <input type="text" class="form-control" name="noTlp" id="mobile" value="<?= $this->load->session->userdata('nomorTelpon') ?>" placeholder="enter mobile number" title="masukan nomor handphone anda">
                           </div>
                       </div>
                       <div class="form-group">
@@ -110,7 +110,7 @@
                           
                           <div class="col-xs-6">
                               <label for="deskripsi"><h4>Deskripsi</h4></label>
-                              <input type="text" class="form-control" id="location" placeholder="somewhere" value="<?= $this->load->session->userdata('deskripsi') ?>" title="masukan deskripsi anda">
+                              <input type="text" class="form-control" id="location" name="deskripsi" placeholder="deskripsi" value="<?= $this->load->session->userdata('deskripsi') ?>" title="masukan deskripsi anda">
                           </div>
                       </div>
                       <div class="form-group">
@@ -125,6 +125,13 @@
                           <div class="col-xs-6">
                             <label for="password2"><h4>Instansi</h4></label>
                               <input type="text" value="<?= $this->load->session->userdata('instansi') ?>" class="form-control" name="instansi" id="password2" placeholder="instansi" title="masukan instansi anda">
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-6">
+                            <label for="password2"><h4>Alamat</h4></label>
+                              <input type="text" value="<?= $this->load->session->userdata('alamat') ?>" class="form-control" name="alamat" id="password2" placeholder="instansi" title="masukan instansi anda">
                           </div>
                       </div>
                       <div class="form-group">
