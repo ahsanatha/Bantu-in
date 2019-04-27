@@ -57,7 +57,8 @@ class C_Customer extends CI_Controller {
         }
         public function signin()
         {
-            $this->load->view('V_loginAs');
+            $datatoview['tipe'] = 'Customer';
+            $this->load->view('V_signin',$datatoview);
         }
 
         public function signup()
