@@ -126,6 +126,9 @@ class C_Assistent extends CI_Controller {
                 echo "login gagal";
             };
         }
+    public function logout(){
+        $this->load->view('C_Assistent');
+    }
         
 }     
 ?>

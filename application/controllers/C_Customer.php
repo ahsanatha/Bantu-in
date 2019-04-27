@@ -15,6 +15,9 @@ class C_Customer extends CI_Controller {
         //deklarasi model
         $this->load->model('M_Customer');
     }
+    public function index(){
+        redirect(base_url());
+    }
         public function home()
         {
             $this->load->view('template/header');
@@ -147,7 +150,9 @@ class C_Customer extends CI_Controller {
                 echo "login gagal";
             };
         }
-        
+        public function logout(){
+            $this->load->view('C_Customer');
+        }   
 
     }
 ?>
