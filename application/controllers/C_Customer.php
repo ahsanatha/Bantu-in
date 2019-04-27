@@ -48,7 +48,7 @@ class C_Customer extends CI_Controller {
                 // memanggil method registCst dari model
                 $this->M_Customer->regisCst($data);
                 //flashdata sukses
-                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
+                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Edit Profile berhasil </div>'); 
                //back to V_registCst
                 $this->signup();
             }
