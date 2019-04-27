@@ -100,9 +100,7 @@
               </div>
               <!-- isi -->
               <?php foreach ($asistens as $key => $asisten): ?>
-              <div class="pt-5">
-                <ul class="comment-list">
-
+              <div class="pt-5 col-md-10">
                   <li class="comment">
                     <div class="vcard bio">
                       <img src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>" alt="Image placeholder">
@@ -118,7 +116,7 @@
                       <br>
                     </div>
                   </li>
-                </ul>
+                  <br>
               </div>
               <?php endforeach; ?>
 
