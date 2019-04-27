@@ -15,6 +15,11 @@ class C_Customer extends CI_Controller {
         //deklarasi model
         $this->load->model('M_Customer');
     }
+        public function home()
+        {
+            $this->load->view('template/header');
+            $this->load->view('V_loginPelanggan');
+        }
         public function regisCst()
         {
             //validation form
@@ -49,8 +54,32 @@ class C_Customer extends CI_Controller {
             }
         }
         public function editProfileCst(){
-
-            $this->load->view('V_editProfileCst');
+            //validation form
+		    $this->form_validation->set_rules('nama','Nama','required|trim');
+            $this->form_validation->set_rules('instansi','Instansi','required|trim');
+            $this->form_validation->set_rules('noHp','noHp','required|trim');
+            //validation check
+            if($this->form_validation->run()== false){
+               //flashdata fail 
+               $this->load->view('template/header');
+                $this->load->view('V_editProfileCst');
+            }
+            else {
+            //insert data to array
+                $data = [
+                    'nama' =>$this->input->post('nama'),
+                    'instansi'=>$this->input->post('instansi'),
+                    'noHp' =>$this->input->post('noHp')
+                ];
+               
+                $this->M_Customer->editCst($data);
+                //flashdata sukses
+                $this->session->set_userdata($this->M_Customer->getCst($_SESSION['idUser']));
+                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
+                $this->load->view('template/header');
+                $this->load->view('V_editProfileCst');
+            }
+            
         }
         public function detailAst(){
             $this->load->view('V_detailAsstCst');
@@ -111,10 +140,9 @@ class C_Customer extends CI_Controller {
                 $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
                 $_SESSION['tipeUser'] = 'customer';
                 $data = $this->M_Customer->getCst($_SESSION['idUser']);
-                var_dump($data);
-                //$this->session->set_userdata($data);
-                
-                echo "login berhasil";
+                $this->session->set_userdata($data);
+                $this->load->view('template/header');
+                $this->load->view('V_loginPelanggan');
             }else{
                 echo "login gagal";
             };

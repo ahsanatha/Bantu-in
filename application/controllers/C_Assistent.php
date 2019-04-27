@@ -70,7 +70,7 @@ class C_Assistent extends CI_Controller {
             }
         }
         public function editProfileAst(){
-
+            $this->load->view('template/headerAst');
             $this->load->view('V_editProfileAst');
         }
         public function signin()
