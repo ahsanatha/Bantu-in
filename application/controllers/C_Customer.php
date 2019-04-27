@@ -110,7 +110,7 @@ class C_Customer extends CI_Controller {
             if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
                 $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
                 $_SESSION['tipeUser'] = 'customer';
-                $data = $this->M_Assistent->getAst($_SESSION['idUser']);
+                $data = $this->M_Customer->getCst($_SESSION['idUser']);
                 var_dump($data);
                 //$this->session->set_userdata($data);
                 echo "login berhasil";
