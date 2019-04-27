@@ -61,7 +61,7 @@ class C_Customer extends CI_Controller {
             //validation check
             if($this->form_validation->run()== false){
                //flashdata fail 
-             
+               $this->load->view('template/header');
                 $this->load->view('V_editProfileCst');
             }
             else {
@@ -76,7 +76,7 @@ class C_Customer extends CI_Controller {
                 //flashdata sukses
                 $this->session->set_userdata($this->M_Customer->getCst($_SESSION['idUser']));
                 $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
-                
+                $this->load->view('template/header');
                 $this->load->view('V_editProfileCst');
             }
             
