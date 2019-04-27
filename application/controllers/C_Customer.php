@@ -144,8 +144,7 @@ class C_Customer extends CI_Controller {
                 $_SESSION['tipeUser'] = 'customer';
                 $data = $this->M_Customer->getCst($_SESSION['idUser']);
                 $this->session->set_userdata($data);
-                $this->load->view('template/header');
-                $this->load->view('V_loginPelanggan');
+                redirect(base_url('C_Customer/home'));
             }else{
                 echo "login gagal";
             };

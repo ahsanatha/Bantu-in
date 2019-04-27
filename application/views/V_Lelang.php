@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nama</a>
+                        <a class="nav-link" href="#">
+                            <?=$info['nama']?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../pages/dashboard.html">Home</a>
@@ -78,10 +79,10 @@
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Nama</a>
+                                <a href="#"><?=$info['nama']?></a>
                             </h4>
-                            <h5>$24.99</h5>
-                            <p class="card-text">Deskripsi</p>
+                            <h5>Gaji tertinggi saat ini : $24.99</h5>
+                            <p class="card-text"><?=$info['deskripsi']?></p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
