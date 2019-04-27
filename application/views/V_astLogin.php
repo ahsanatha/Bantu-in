@@ -4,20 +4,18 @@
   <div class="container mt-5">
 
     <div class="row">
-
+<br>
       <div class="col-lg-3">
         <img src="http://placehold.it/100x90">
         <h3>none</h3>
         <div class="list-group">
-          <a href="#" class="list-group-item">none</a>
-          <a href="#" class="list-group-item">none</a>
-          <a href="#" class="list-group-item">none</a>
-          <a href="#" class="list-group-item">none</a>
+         
 
         </div>
 
       </div>
       <div class="col-lg-9">
+        <br>
       <div class="row">
         <div class="col-lg-4 col-md-4 mb-4">
           <div class="card h-100">

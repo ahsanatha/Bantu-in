@@ -49,8 +49,34 @@ class C_Customer extends CI_Controller {
             }
         }
         public function editProfileCst(){
-
-            $this->load->view('V_editProfileCst');
+            //validation form
+		    $this->form_validation->set_rules('nama','Nama','required|trim');
+            $this->form_validation->set_rules('instansi','Instansi','required|trim');
+            //validation check
+            if($this->form_validation->run()== false){
+               //flashdata fail
+                $this->session->set_flashdata('message','<div class ="alert alert-danger role = alert">gagal melakukan registrasi </div>'); 
+                //back to V_RegisCst
+                $this->load->view('V_editProfileCst');
+            }
+            else {
+            //insert data to array
+                $data = [
+                    'nama' =>$this->input->post('nama'),
+                    'wilayah' =>$this->input->post('wilayah'),
+                    'instansi'=>$this->input->post('instansi'),
+                    'email'=>$this->input->post('email'),
+                    'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
+                    'gambar' =>'default.png'
+                ];
+                // memanggil method registCst dari model
+                $this->M_Customer->regisCst($data);
+                //flashdata sukses
+                $this->session->set_flashdata('message','<div class ="alert alert-success role = alert">Registrasi berhasil </div>'); 
+               //back to V_registCst
+                $this->signup();
+            }
+            
         }
         public function detailAst(){
             $this->load->view('V_detailAsstCst');
