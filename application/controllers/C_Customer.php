@@ -102,6 +102,23 @@ class C_Customer extends CI_Controller {
         {
             $this->load->view('V_signinAst');
         }
+        public function doSignIn(){
+            $data = array(
+                'email' => $this->input->post('email'),
+            );
+            $query = $this->M_Customer->cekCst($data);
+            if ( ($query->num_rows() > 0) && (password_verify($this->input->post('password'),$query->row_array()['password'])) ){
+                $_SESSION['idUser'] = $query->row_array()['idPelanggan'];
+                $_SESSION['tipeUser'] = 'customer';
+                $data = $this->M_Assistent->getAst($_SESSION['idUser']);
+                var_dump($data);
+                //$this->session->set_userdata($data);
+                echo "login berhasil";
+            }else{
+                echo "login gagal";
+            };
+        }
+        
 
     }
 ?>
