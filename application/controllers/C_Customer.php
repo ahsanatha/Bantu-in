@@ -113,6 +113,7 @@ class C_Customer extends CI_Controller {
                 $data = $this->M_Customer->getCst($_SESSION['idUser']);
                 var_dump($data);
                 //$this->session->set_userdata($data);
+                
                 echo "login berhasil";
             }else{
                 echo "login gagal";
