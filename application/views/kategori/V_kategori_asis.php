@@ -75,7 +75,8 @@
             <div class="bg-light border-right" id="sidebar-wrapper">
                 <div class="list-group list-group-flush">
                     <a href="<?php echo site_url('C_Customer/kategori_asis');?>"
-                        class=" font-weight-bold list-group-item list-group-item-action active">Asisten Rumah Tangga</a>
+                        class=" font-weight-bold list-group-item list-group-item-action bg-light">Asisten Rumah
+                        Tangga</a>
                     <a href="<?php echo site_url('C_Customer/kategori_suster');?>"
                         class="font-weight-bold list-group-item list-group-item-action bg-light">Suster</a>
                     <a href="<?php echo site_url('C_Customer/kategori_baby');?>"
