@@ -7,17 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Lelang</title>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -50,13 +45,8 @@
             </div>
         </div>
     </nav>
-
-    <!-- Page Content -->
-
     <div class="container mt-4">
-
         <div class="row">
-
             <div class="col-lg-3">
                 <br>
                 <br>

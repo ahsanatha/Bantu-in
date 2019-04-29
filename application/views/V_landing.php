@@ -56,7 +56,7 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul
                                 class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-md-block m-0 p-0">
-                                <?php if ($_SESSION['idUser'] == NULL){ ?>
+                                <?php if (!isset($_SESSION['idUser'])){ ?>
                                 <li class="cta"><a href="<?php echo base_url('C_Main/signin'); ?>"
                                         class="nav-link"><span>Sign In</span></a></li>
                                 <li class="cta"><a href="<?php echo base_url('C_Main/signup'); ?>"
