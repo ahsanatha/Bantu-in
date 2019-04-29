@@ -116,6 +116,16 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Kategori</label>
+                                            <div class="col-sm-8">
+                                                <select class="form-control" id="kategori" name="kategori">
+                                                    <option value="bs">Baby Sitter</option>
+                                                    <option value="art">Asisten Rumah Tangga</option>
+                                                    <option value="str">Suster</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Deskripsi Diri</label>
                                             <div class="col-sm-8">
                                                 <textarea rows="3" value="<?= set_value('alamat') ?>" name="deskripsi"

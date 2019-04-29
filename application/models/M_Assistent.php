@@ -16,4 +16,9 @@ class M_Assistent extends CI_Model{
         $query = 'update asisten set nama = "'.$data['nama'].'",nik = "'.$data['nik'].'",tglLahir = "'.$data['tglLahir'].'",alamat = "'.$data['alamat'].'",deskripsi = "'.$data['deskripsi'].'",nomorTelpon = "'.$data['nomorTelpon'].'",instansi = "'.$data['instansi'].'" where idAsisten = '.$_SESSION['idUser'].' ';
         $this->db->query($query);
     }
+    public function getAss($kat)
+    { //data semua asisten
+        $this->db->where('kategori',$kat);
+		return $this->db->get('asisten');
+    }
 }?>

@@ -14,6 +14,7 @@ class C_Customer extends CI_Controller {
         parent::__construct();
         //deklarasi model
         $this->load->model('M_Customer');
+        $this->load->model('M_Assistent');
     }
     public function index(){
         redirect(base_url());
@@ -101,26 +102,29 @@ class C_Customer extends CI_Controller {
 
         public function kategori_baby()
         {
-            $query = $this->M_Customer->getAss();
+            $query = $this->M_Assistent->getAss("bs");
             $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_baby', $data);
+            $data['title'] = "Baby Sitter";
+            $data['gambar'] = 'baby_sitter';
+            $this->load->view('kategori/V_kategori_asis', $data);
         }
 
         public function kategori_suster()
         {
-            $query = $this->M_Customer->getAss();
+            $query = $this->M_Assistent->getAss("str");
             $data['asistens'] = $query->result_array(); 
-
-            $this->load->view('kategori/V_kategori_suster', $data);
+            $data['title'] = "Suster";
+            $data['gambar'] = 'nurse';
+            $this->load->view('kategori/V_kategori_asis', $data);
         }
 
 
         public function kategori_asis()
         {
-            $query = $this->M_Customer->getAss();
+            $query = $this->M_Assistent->getAss("art");
             $data['asistens'] = $query->result_array(); 
-
+            $data['title'] = "Asisten Rumah Tangga";
+            $data['gambar'] = 'maid';
             $this->load->view('kategori/V_kategori_asis', $data);
         }
 

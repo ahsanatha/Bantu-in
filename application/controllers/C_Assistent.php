@@ -60,6 +60,7 @@ class C_Assistent extends CI_Controller {
                     'password' =>password_hash( $this->input->post('password'),PASSWORD_DEFAULT),
                     'gambar' =>'default.png',
                     'deskripsi' => $this->input->post('deskripsi'),
+                    'kategori' =>$this->input->post('kategori'),
                 ];
                 // memanggil method registAsst dari M_Asst
                 $this->M_Assistent->regisAst($data);

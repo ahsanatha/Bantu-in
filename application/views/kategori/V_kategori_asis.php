@@ -44,7 +44,16 @@
                         <nav class="site-navigation position-relative text-right" role="navigation">
                             <ul
                                 class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
-                                <li class="cta"><a href="" class="nav-link"><span>Sign Out</span></a></li>
+                                <?php if ($_SESSION['idUser'] == NULL){ ?>
+                                <li class="cta"><a href="<?php echo base_url('C_Main/signin'); ?>"
+                                        class="nav-link"><span>Sign In</span></a></li>
+                                <li class="cta"><a href="<?php echo base_url('C_Main/signup'); ?>"
+                                        class="nav-link"><span>Sign Up</span></a></li>
+                                <?php } else {?>
+                                <li class="cta"><span style="color:white"><?=$_SESSION['nama']?></span></li>
+                                <li class="cta"><a href="<?php echo base_url('C_Main/logout'); ?>"
+                                        class="nav-link"><span>Logout</span></a></li>
+                                <?php }?>
                             </ul>
                         </nav>
                         <a href="#"
@@ -55,14 +64,15 @@
             </div>
         </header>
         <div class="intro-section single-cover" id="home-section">
-            <div class="slide-1 " style="background-image: url('<?php echo base_url(); ?>assets/images/asisten.jpg');"
+            <div class="slide-1 "
+                style="background-image: url('<?php echo base_url(); ?>assets/images/<?=$gambar?>.jpg');"
                 data-stellar-background-ratio="0.5">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="row justify-content-center align-items-center text-center">
                                 <div class="col-lg-6">
-                                    <h1 data-aos="fade-up" data-aos-delay="0">Asisten Rumah Tangga</h1>
+                                    <h1 data-aos="fade-up" data-aos-delay="0"><?=$title?></h1>
                                 </div>
                             </div>
                         </div>
@@ -92,16 +102,16 @@
                                 <!-- isi -->
                                 <?php foreach ($asistens as $key => $asisten): ?>
                                 <div class="card m-3" style="width: 18rem;">
-                                    <img class="card-img-top img-fluid w-50 rounded-circle mx-auto mb-4"
+                                    <img class="card-img-top img-fluid w-50 rounded-circle mx-auto mb-2 mt-2"
                                         src="<?php echo base_url(); ?>assets/images/<?php echo $asisten['gambar'] ?>"
                                         alt="Card image cap">
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $asisten['nama']; ?></h5>
-                                        <p class="card-text">Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></p>
-                                        <p class="card-text">Alamat : <?php echo $asisten['alamat']; ?></p>
-                                        <p class="card-text">Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></p>
-                                        <p class="card-text">Instansi : <?php echo $asisten['instansi']; ?></p>
-                                        <p class="card-text"><?php echo $asisten['deskripsi']; ?></p>
+                                        <h5 class="card-title"><strong><?php echo $asisten['nama']; ?></strong></h5>
+                                        <p>Tanggal Lahir : <?php echo $asisten['tglLahir']; ?></p>
+                                        <p>Alamat : <?php echo $asisten['alamat']; ?></p>
+                                        <p>Nomor Telepon : <?php echo $asisten['nomorTelpon']; ?></p>
+                                        <p>Instansi : <?php echo $asisten['instansi']; ?></p>
+                                        <p><?php echo $asisten['deskripsi']; ?></p>
                                     </div>
                                     <a href="#" class="btn btn-primary">Lelang</a>
                                 </div>
