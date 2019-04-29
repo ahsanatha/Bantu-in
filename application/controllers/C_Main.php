@@ -22,4 +22,9 @@ class C_Main extends CI_Controller {
     {
         $this->load->view('V_kategori');
     }
+    public function logout(){
+        $_SESSION['idUser'] = NULL;
+        $_SESSION['tipeUser'] = NULL;
+        redirect(base_url());
+    }
 }
