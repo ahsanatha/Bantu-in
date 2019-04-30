@@ -121,8 +121,7 @@ class C_Assistent extends CI_Controller {
                 $data = $this->M_Assistent->getAst($_SESSION['idUser']);
                 $this->session->set_userdata($data);
                 //var_dump($this->session->userdata['nama']);
-                $this->load->view('template/headerAst');
-                $this->load->view('V_astLogin');
+                redirect(base_url());
             }else{
                 echo "login gagal";
             };

@@ -113,7 +113,8 @@
                                         <p>Instansi : <?php echo $asisten['instansi']; ?></p>
                                         <p><?php echo $asisten['deskripsi']; ?></p>
                                     </div>
-                                    <a href="#" class="btn btn-primary">Lelang</a>
+                                    <a href="<?=base_url()?>C_Lelang/user?id=<?=$asisten['idAsisten']?>"
+                                        class="btn btn-primary">Lelang</a>
                                 </div>
                                 <?php endforeach; ?>
                             </div>
